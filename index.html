@@ -21,11 +21,11 @@
 
             <div class="buttons">
                 <button id="yesBtn" class="btn btn-success">
-                    YES ❤️
+                    YES 
                 </button>
 
                 <button id="noBtn" class="btn btn-danger">
-                    NO 😭
+                    NO 
                 </button>
             </div>
 
@@ -39,18 +39,46 @@
         const noBtn = document.getElementById("noBtn");
         const message = document.getElementById("message");
 
+        let noSize = 18;
+        let clicks = 0;
+
         yesBtn.addEventListener("click", function() {
+
+            noBtn.style.display = "none";
             message.innerHTML = "YAY! ❤️ I can't wait for our date! 🥰";
         });
 
-        noBtn.addEventListener("mouseover", function() {
+        noBtn.addEventListener("click", function() {
 
-            const x = Math.random() * (window.innerWidth - 150);
-            const y = Math.random() * (window.innerHeight - 100);
+            clicks++;
+            noSize += 8;
 
-            noBtn.style.position = "fixed";
-            noBtn.style.left = x + "px";
-            noBtn.style.top = y + "px";
+            noBtn.style.fontSize = noSize + "px";
+            noBtn.style.padding = "20px 40px";
+
+                if (clicks == 1) {
+                noBtn.innerHTML = "Are you sure? 🥺";
+                yesBtn.style.padding = "24px";
+            } 
+            else if (clicks == 2) {
+                noBtn.innerHTML = "Really? 😭";
+            } 
+            else if (clicks == 3) {
+                noBtn.innerHTML = "PLEASE 😭❤️";
+            } 
+            else if (clicks >= 4) {
+                noBtn.innerHTML = "NO WAY 😭";
+            }
+        
+                const x = Math.random() * (window.innerWidth - 150);
+                const y = Math.random() * (window.innerHeight - 100);
+
+                noBtn.style.position = "fixed";
+                noBtn.style.left = x + "px";
+                noBtn.style.top = y + "px";  
+            
+
+    
         });
     </script>
 
