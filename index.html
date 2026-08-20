@@ -15,17 +15,17 @@
 
             <div class="heart">❤️</div>
 
-            <h1>Will you go on a date with me?</h1>
+            <h1>Tara date</h1>
 
-            <p>I have a very important question for you...</p>
+            <p>dali</p>
 
             <div class="buttons">
                 <button id="yesBtn" class="btn btn-success">
-                    YES 
+                    Okayy 
                 </button>
 
                 <button id="noBtn" class="btn btn-danger">
-                    NO 
+                    Ayaw 
                 </button>
             </div>
 
@@ -46,7 +46,10 @@
 
             noBtn.style.display = "none";
             yesBtn.style.display = "none";
-            message.innerHTML = "YAY! ❤️ I can't wait for our date! 🥰";
+            message.innerHTML = "YESSSS!!!!!";
+            const today = new Date();
+            const date = today.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            message.innerHTML += `<br>wala na bawian to pumayag kana at this time: ${date}`;
         });
 
         noBtn.addEventListener("click", function() {
@@ -65,16 +68,16 @@
         noBtn.style.transform = `scale(${noScale})`;
 
                 if (clicks == 1) {
-                noBtn.innerHTML = "Are you sure? 🥺";
+                noBtn.innerHTML = "WeHH? 🥺";
             } 
             else if (clicks == 2) {
-                noBtn.innerHTML = "Really? 😭";
+                noBtn.innerHTML = "TALAGA AYAW MO? 😭";
             } 
             else if (clicks == 3) {
-                noBtn.innerHTML = "PLEASE 😭❤️";
+                noBtn.innerHTML = "SIGI NAAAA 😭❤️";
             } 
             else if (clicks >= 4) {
-                noBtn.innerHTML = "NO WAY 😭";
+                noBtn.innerHTML = "PLEACEEE!!!!😭";
             }
         
                 const x = Math.random() * (window.innerWidth - 150);
